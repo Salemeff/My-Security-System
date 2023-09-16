@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Axle.Data</name>
+    </assembly>
+    <members>
+        <member name="T:Axle.Data.Common.DbServiceProvider`8">
+            <summary>
+            A base class for creating a factory for data access components.
+            </summary>
+            <typeparam name="TDbConnection"></typeparam>
+            <typeparam name="TDbTransaction"></typeparam>
+            <typeparam name="TDbCommand"></typeparam>
+            <typeparam name="TDbCommandBuilder"></typeparam>
+            <typeparam name="TDbDataAdapter"></typeparam>
+            <typeparam name="TDbDataReader"></typeparam>
+            <typeparam name="TDbParameter"></typeparam>
+            <typeparam name="TDbType"></typeparam>
+        </member>
+        <member name="T:Axle.Data.Configuration.ConfigExtensions">
+            <summary>
+            A static class to contain extension methods for configuration objects
+            </summary>
+        </member>
+        <member name="M:Axle.Data.Configuration.ConfigExtensions.GetConnectionStrings(Axle.Configuration.IConfigSection)">
+            <summary>
+            Obtains a collection of <see cref="T:Axle.Data.Configuration.ConnectionStringInfo"/> objects,
+            each representing a particular connection string configuration.
+            </summary>
+            <param name="config">
+            The <see cref="T:Axle.Configuration.IConfigSection">configuration object</see> to obtain connection string information from,
+            </param>
+            <returns>
+            A collection of <see cref="T:Axle.Data.Configuration.ConnectionStringInfo"/> objects,
+            each representing a particular connection string configuration.
+            </returns>
+        </member>
+        <member name="T:Axle.Data.Configuration.ConnectionStringInfo">
+            <summary>
+            A class representing the connection string information, Can be used to bind connection string configuration data.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.Conversion.DbRecordConverter`1">
+            <summary>
+            An abstract class to serve as a base for implementing the <see cref="T:Axle.Data.Conversion.IDbRecordConverter`1"/> interface.
+            </summary>
+            <typeparam name="T">
+            The type of the object to convert an instance of <see cref="T:Axle.Data.IDbRecord"/> to.
+            </typeparam>
+        </member>
+        <member name="T:Axle.Data.Conversion.IDbRecordConverter`1">
+            <summary>
+            An interface for converter objects that are able to convert
+            an instance of <see cref="T:Axle.Data.IDbRecord"/> to a target type <typeparamref name="T"/>
+            </summary>
+            <typeparam name="T">
+            The type of the object to covert a record from.
+            </typeparam>
+        </member>
+        <member name="T:Axle.Data.Conversion.IDbValueConverter">
+            <summary>
+            An interface used for converting database-specific value objects to their raw counterparts and
+            the other way around.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.DataModule">
+            <summary>
+            The role of this module is to get initialized once
+            the available datasources and db service provider objects for an application
+            are fully discovered an usable.
+            
+            The datasources module has a dependency on this module in order to ensure
+            the availability of all db service providers, thus valid datasources can be
+            instantiated.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.DataSources.DataSourceCommandExtensions">
+            <summary>
+            A <see langword="static"/> class containing extension methods for 
+            the <see cref="T:Axle.Data.DataSources.IDataSourceCommand"/> interface.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.DataSources.DataSourceConnectionExtensions">
+            <summary>
+            A <see langword="static"/> class to contain extension methods for 
+            the <see cref="T:Axle.Data.DataSources.IDataSourceConnection"/> class.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.DataSources.DataSourceExtensions">
+            <summary>
+            A static class to contain extension methods for <see cref="T:Axle.Data.DataSources.IDataSourceConnection"/> instances.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.DataSources.ISqlScriptLocationRegistry">
+            <summary>
+            A registry to keep locations of sql script files. The registry is
+            internally used by <see cref="T:Axle.Data.DataSources.IDataSourceConnection"/> implementations in order
+            to resolve dialect-specific sql scripts.
+            </summary>
+            <seealso cref="T:Axle.Data.DataSources.IDataSource"/>
+            <seealso cref="T:Axle.Data.DataSources.IDataSourceConnection"/>
+            <seealso cref="M:Axle.Data.DataSources.IDataSource.GetScript(System.String,System.String,System.Data.CommandType,Axle.Data.DataSources.BuildCommandCallback)"/>
+        </member>
+        <member name="T:Axle.Data.DataSources.RequiresDataSourcesAttribute">
+            <summary>
+            Causes the annotated target module to be initialized after the data-source module is ready.
+            </summary>
+        </member>
+        <member name="M:Axle.Data.DataSources.RequiresDataSourcesAttribute.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Axle.Data.DataSources.RequiresDataSourcesAttribute"/> attribute.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.DataSources.Resources.SqlScriptSourceInfo">
+            <summary>
+            A resource class to represent <see cref="T:Axle.Data.DataSources.Resources.SqlScriptSource">database sqlScriptSource</see> objects.
+            </summary>
+            <seealso cref="T:Axle.Data.DataSources.Resources.SqlScriptSource" />
+        </member>
+        <member name="M:Axle.Data.DataSources.Resources.SqlScriptSourceInfo.Open">
+            <inheritdoc />
+        </member>
+        <member name="P:Axle.Data.DataSources.Resources.SqlScriptSourceInfo.Value">
+            <summary>
+            Gets the <see cref="T:Axle.Data.DataSources.Resources.SqlScriptSource"/> object represented by this <see cref="T:Axle.Data.DataSources.Resources.SqlScriptSourceInfo">resource</see> instance.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.DbParameterBuilderExtensions">
+            <summary>
+            A static class to provide common extension methods to implementations of the <see cref="T:Axle.Data.IDbParameterBuilder"/> interface.
+            </summary>
+        </member>
+        <member name="T:Axle.Data.DbServiceProviderExtensions">
+            <summary>
+            A static class to provide extension methods for <see cref="T:Axle.Data.IDbServiceProvider"/> implementations.
+            </summary>
+        </member>
+        <member name="M:Axle.Data.DbServiceProviderExtensions.Parametrize(Axle.Data.IDbServiceProvider,Axle.Data.IDbRecord)">
+            <summary>
+            Creates a collection of input <see cref="T:System.Data.IDbDataParameter">database parameters</see> based on the
+            field values of the provided <see cref="T:Axle.Data.IDbRecord">record</see> instance.
+            </summary>
+            <param name="dbServiceProvider">
+            The <see cref="T:Axle.Data.IDbServiceProvider"/> instance that will create the parameter objects.
+            </param>
+            <param name="record">
+            The <see cref="T:Axle.Data.IDbRecord">record</see> to parametrize.
+            </param>
+            <returns>
+            A collection of input <see cref="T:System.Data.IDbDataParameter">database parameters</see> based on the
+            field values of the provided <see cref="T:Axle.Data.IDbRecord">record</see> instance.
+            </returns>
+        </member>
+        <member name="M:Axle.Data.DbServiceProviderExtensions.GetDbParameterBuilder(Axle.Data.IDbServiceProvider)">
+            <summary>
+            Gets an instance of <see cref="T:Axle.Data.IDbParameterBuilder"/> object tailored for the current
+            <see cref="T:Axle.Data.IDbServiceProvider"/> instance. 
+            </summary>
+            <param name="dbServiceProvider">
+            The <see cref="T:Axle.Data.IDbServiceProvider"/> instance to provide the command parameter creation functionality.
+            </param>
+            <returns>
+            An <see cref="T:Axle.Data.IDbParameterBuilder"/> instance.
+            </returns>
+        </member>
+        <member name="T:Axle.Data.IDbParameterFactory`2">
+            <summary>
+            An interface representing a <see cref="T:System.Data.Common.DbCommand">command</see> <see cref="T:System.Data.Common.DbParameter">parameter</see>
+            factory.
+            </summary>
+            <typeparam name="TDbParameter">
+            The concrete <see cref="T:System.Data.Common.DbParameter"/> type this factory supports.
+            </typeparam>
+            <typeparam name="TDbType">
+            The database-specific type used in the parameter definition.
+            </typeparam>
+            <seealso cref="T:System.Data.IDbDataParameter"/>
+            <seealso cref="T:System.Data.IDataParameter"/>
+            <seealso cref="T:System.Data.Common.DbParameter"/>
+        </member>
+        <member name="M:Axle.Data.IDbParameterFactory`2.CreateDbParameter(System.String,System.Nullable{`1},System.Nullable{System.Int32},System.Data.ParameterDirection,System.Object)">
+            <summary>
+            Creates a new instance of <typeparamref name="TDbParameter"/> using the provided value and definition settings.
+            </summary>
+            <param name="name">
+            The name of the parameter.
+            </param>
+            <param name="type">
+            An optional parameter of <typeparamref name="TDbType"/> type, specifying the database-specific type of the parameter.
+            </param>
+            <param name="size">
+            An optional <see cref="T:System.Int32">integer</see> value specifying the size of the parameter.
+            </param>
+            <param name="direction">
+            One of the <see cref="T:System.Data.ParameterDirection"/> enumeration values.
+            </param>
+            <param name="value">
+            The actual value passed to the db parameter.
+            </param>
+            <returns>
+            A new instance of <typeparamref name="TDbParameter"/> using the provided value and definition settings.
+            </returns>
+        </member>
+        <member name="T:Axle.Data.IDbRecord">
+            <summary>
+            An interface that represents a data record object.
+            </summary>
+        </member>
+        <member name="P:Axle.Data.IDbRecord.FieldCount">
+            <summary>
+            Gets the number of columns in the current record.
+            </summary>
+            <returns>
+            When not positioned in a valid recordset, <c>0</c>; otherwise, the number of columns in the current record.
+            The default is <c>-1</c>.
+            </returns>
+        </member>
+    </members>
+</doc>

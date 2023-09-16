@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Axle.Configuration</name>
+    </assembly>
+    <members>
+        <member name="T:Axle.Configuration.ConfigSectionExtensions">
+            <summary>
+            A static class containing common configuration extension methods.
+            </summary>
+        </member>
+        <member name="P:Axle.Configuration.IConfigSection.Item(System.String)">
+            <summary>
+            Gets a configuration <see cref="T:Axle.Configuration.IConfigSetting">setting</see>.
+            </summary>
+            <param name="key">
+            The configuration key.
+            </param>
+            <returns>
+            A <see cref="T:Axle.Configuration.IConfigSetting"/> instance representing the retrieved configuration value.
+            </returns>
+        </member>
+        <member name="T:Axle.Configuration.IConfiguration">
+            <summary>
+            An interface representing the system configuration.
+            </summary>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.AssemblyNameConverter">
+            <summary>
+            A configuration converter class that can handle <see cref="T:System.Reflection.Assembly" /> instances.
+            </summary>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.AssemblyPathConverter">
+            <summary>
+            A configuration converter class that can handle <see cref="T:Axle.Text.Expressions.Path.AssemblyPathExpression" /> instances.
+            </summary>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.EnumNameConverter`1">
+            <summary>
+            A configuration converter class that can handle enum instances.
+            </summary>
+            <typeparam name="T">A valid enum type.</typeparam>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.PathExpressionConverter">
+            <summary>
+            A configuration converter class that can handle <see cref="T:Axle.Text.Expressions.Path.PathExpression" /> instances.
+            </summary>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.Sdk.AbstractConfigurationElement">
+            <summary>
+            An abstract class designed serve as a base for creating configuration element objects.
+            Inherits from <see cref="T:System.Configuration.ConfigurationElement" />
+            </summary>
+            <seealso cref="T:System.Configuration.ConfigurationElement"/>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.Sdk.AddElementParser`1">
+            <summary>
+            The default parser for configuration elements within an <see cref="T:Axle.Configuration.Legacy.Sdk.AbstractAddRemoveElementCollection`3"/>
+            implementation that reside in the <c>add</c> section.
+            </summary>
+            <typeparam name="T">
+            The type of the configuration element within the collection.
+            It must inherit from <see cref="T:System.Configuration.ConfigurationElement"/> and have a public default constructor.
+            </typeparam>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.AbstractConfigurationElementParser`1"/>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.AbstractAddRemoveElementCollection`3"/>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser"/>
+            <seealso cref="T:System.Configuration.ConfigurationElement"/>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.Sdk.ConfigurationConverter`1">
+            <summary>
+            A generic base class for the configuration converter types.
+            </summary>
+            <typeparam name="T">The type of the configuration property this converter can handle.</typeparam>
+            <seealso cref="T:System.Configuration.ConfigurationConverterBase"/>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.Sdk.GenericConverter`2">
+            <summary>
+            A configuration converter class that can handle <see cref="T:System.Version" /> instances.
+            </summary>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser">
+            <summary>
+            An interface for custom configuration element parsers. 
+            A configuration element parser is used to create the appropriate configuration element instance in case where a
+            <see cref="T:System.Configuration.ConfigurationElementCollection" /> implementation can hold elements of different types. 
+            </summary>
+            <seealso cref="T:System.Configuration.ConfigurationElement"/>
+            <seealso cref="T:System.Configuration.ConfigurationElementCollection"/>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.AbstractConfigurationElementCollection"/>
+        </member>
+        <member name="M:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser.Accept(System.String)">
+            <summary>
+            Determines if an element is supported by the current <see cref="T:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser"/> implementation.
+            </summary>
+            <param name="elementName">The element's tag name.</param>
+            <returns>
+            true if the element can be parsed by this <see cref="T:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser"/> instance; otherwise false.
+            </returns>
+        </member>
+        <member name="M:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser.Parse(System.Xml.XmlReader,System.Boolean)">
+            <summary>
+            Parses the contents of the configuration <see cref="T:System.Xml.XmlReader" /> to produce a valid configuration element.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> that reads from the configuration file</param>
+            <param name="serializeCollectionKey">true to serialize only the collection key properties; otherwise, false.</param>
+            <returns>A successfully parsed configuration element instance.</returns>
+            <see also="System.Xml.XmlReader"/>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser`1">
+            <summary>
+            A generic interface for custom configuration element parsers. 
+            A configuration element parser is used to create the appropriate configuration element instance in case where a
+            <see cref="T:System.Configuration.ConfigurationElementCollection" /> implementation can hold elements of different types. 
+            </summary>
+            <typeparam name="T">
+            The type of the parsed configuration element. This must be a class that inherits from <see cref="T:System.Configuration.ConfigurationElement" />
+            </typeparam>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser"/>
+            <seealso cref="T:System.Configuration.ConfigurationElement"/>
+            <seealso cref="T:System.Configuration.ConfigurationElementCollection"/>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.AbstractConfigurationElementCollection"/>
+        </member>
+        <member name="M:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser`1.Parse(System.Xml.XmlReader,System.Boolean)">
+            <summary>
+            Parses the contents of the configuration <see cref="T:System.Xml.XmlReader" /> to produce a valid configuration element.
+            </summary>
+            <param name="reader">The <see cref="T:System.Xml.XmlReader"/> that reads from the configuration file</param>
+            <param name="serializeCollectionKey">true to serialize only the collection key properties; otherwise, false.</param>
+            <returns>A successfully parsed configuration element instance.</returns>
+            <see also="System.Xml.XmlReader"/>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.Sdk.RemoveElementParser`1">
+            <summary>
+            The default parser for configuration elements within an <see cref="T:Axle.Configuration.Legacy.Sdk.AbstractAddRemoveElementCollection`3"/>
+            implementation that reside in the <c>remove</c> section.
+            </summary>
+            <typeparam name="T">
+            The type of the configuration element within the collection.
+            It must inherit from <see cref="T:System.Configuration.ConfigurationElement"/> and have a public default constructor.
+            </typeparam>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.AbstractConfigurationElementParser`1"/>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.AbstractAddRemoveElementCollection`3"/>
+            <seealso cref="T:System.Configuration.ConfigurationElement"/>
+            <seealso cref="T:Axle.Configuration.Legacy.Sdk.IConfigurationElementParser"/>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.UriConverter">
+            <summary>
+            A configuration converter class that can handle <see cref="T:System.Version" /> instances.
+            </summary>
+        </member>
+        <member name="T:Axle.Configuration.Legacy.VersionConverter">
+            <summary>
+            A configuration converter class that can handle <see cref="T:System.Version" /> instances.
+            </summary>
+        </member>
+    </members>
+</doc>

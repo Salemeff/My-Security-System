@@ -1,0 +1,401 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Axle.Application</name>
+    </assembly>
+    <members>
+        <member name="M:Axle.DependencyInjection.AmbiguousDependencyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="T:Axle.DependencyInjection.DependencyCandidate">
+            <summary>
+            A class that describes a candidate dependency which can satisfy a dependency when a 
+            <see cref="T:Axle.DependencyInjection.IContainer">dependency container</see> is instantiating an object.
+            </summary>
+        </member>
+        <member name="P:Axle.DependencyInjection.DependencyCandidate.Type">
+            <summary>
+            Gets the type of the dependency
+            </summary>
+        </member>
+        <member name="P:Axle.DependencyInjection.DependencyCandidate.Name">
+            <summary>
+            Gets the name of the dependency, or <c>String.Empty</c> if the dependency is not explicitly named.
+            </summary>
+        </member>
+        <member name="T:Axle.DependencyInjection.DependencyInfo">
+            <summary>
+            A class that describes a dependency which needs to be satisfied by a 
+            <see cref="T:Axle.DependencyInjection.IContainer">dependency container</see> during object construction.
+            </summary>
+        </member>
+        <member name="P:Axle.DependencyInjection.DependencyInfo.Type">
+            <summary>
+            Gets the type of the dependency
+            </summary>
+        </member>
+        <member name="P:Axle.DependencyInjection.DependencyInfo.DependencyName">
+            <summary>
+            Gets the name of the dependency, or <c>String.Empty</c> if the dependency is not explicitly named.
+            </summary>
+        </member>
+        <member name="P:Axle.DependencyInjection.DependencyInfo.MemberName">
+            <summary>
+            The name of the reflected member that is represented by the current <see cref="T:Axle.DependencyInjection.DependencyInfo">instance</see>.
+            </summary>
+        </member>
+        <member name="M:Axle.DependencyInjection.DependencyResolutionException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc />
+        </member>
+        <member name="P:Axle.DependencyInjection.DependencyResolutionException.IsRecoverable">
+            <summary>
+            Gets a boolean value determining whether the current <see cref="T:Axle.DependencyInjection.DependencyResolutionException"/> is recoverable.
+            </summary>
+        </member>
+        <member name="T:Axle.DependencyInjection.IContainer">
+            <summary>
+            An interface representing a dependency container.
+            </summary>
+        </member>
+        <member name="M:Axle.DependencyInjection.IContainer.RegisterInstance(System.Object,System.String,System.String[])">
+            <summary>
+            Registers the provided object <paramref name="instance" /> within the current <see cref="T:Axle.DependencyInjection.IContainer">container</see>.
+            </summary>
+            <param name="instance">
+            The object instance to be registered.
+            </param>
+            <param name="name">
+            The name of the context within which the <paramref name="instance" /> will be registered.
+            </param>
+            <param name="aliases">
+            An optional list of additional context names to register the <paramref name="instance" />.
+            </param>
+            <returns>
+            A reference to the current <see cref="T:Axle.DependencyInjection.IContainer">container</see>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="instance" /> or <paramref name="name" /> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:Axle.DependencyInjection.IContainer.RegisterType(System.Type,System.String,System.String[])">
+            <summary>
+            Registers the provided <paramref name="type" /> within the current <see cref="T:Axle.DependencyInjection.IContainer">container</see>.
+            </summary>
+            <param name="type">
+            The type of the dependency to be registered.
+            </param>
+            <param name="name">
+            The name of the context within which the dependency will be registered.
+            </param>
+            <param name="aliases">
+            An optional list of additional context names to register the dependency.
+            </param>
+            <returns>
+            A reference to the current <see cref="T:Axle.DependencyInjection.IContainer">container</see>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="type" /> or <paramref name="name" /> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:Axle.DependencyInjection.IContainer.Resolve(System.Type,System.String)">
+            <summary>
+            Resolves a dependency object using the requested <paramref name="type"/> and <paramref name="name"/>.
+            </summary>
+            <param name="type">
+            The type of the dependency resolve.
+            </param>
+            <param name="name">
+            The name of the dependency to resolve.
+            </param>
+            <returns>
+            An object instance representing the dependency.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="type"/> or <paramref name="name"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="P:Axle.DependencyInjection.IContainer.Parent">
+            <summary>
+            Gets a reference to the parent <see cref="T:Axle.DependencyInjection.IContainer"/> of the dependency container hierarchy.
+            In case the current instance is the root of the hierarchy, the value returned will be <c>null</c>.
+            </summary>
+        </member>
+        <member name="T:Axle.DependencyInjection.Sdk.AbstractDependencyDescriptorProvider">
+            <summary>
+            An abstract class to serve as a base for custom <see cref="T:Axle.DependencyInjection.Sdk.IDependencyDescriptorProvider"/> implementations.
+            </summary>
+            <seealso cref="T:Axle.DependencyInjection.Sdk.IDependencyDescriptorProvider"/>
+        </member>
+        <member name="M:Axle.DependencyInjection.Sdk.AbstractDependencyDescriptorProvider.GetFields(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Axle.DependencyInjection.Sdk.AbstractDependencyDescriptorProvider.GetProperties(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="M:Axle.DependencyInjection.Sdk.AbstractDependencyDescriptorProvider.GetFactories(System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="T:Axle.DependencyInjection.Sdk.ConstructionRecepie">
+            <summary>
+            A class representing a construction recepie; that is the constructor/factory method, 
+            properties and fields of an object type that need to be populated by a 
+            <see cref="T:Axle.DependencyInjection.IContainer">dependency container</see> during the object construction.
+            </summary>
+        </member>
+        <member name="M:Axle.DependencyInjection.Sdk.DependencyMap.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Axle.DependencyInjection.Sdk.DependencyMap"/> class.
+            </summary>
+        </member>
+        <member name="T:Axle.Logging.ILogEntry">
+            <summary>
+            Represents a log entry; that is, a representation of an application event that is to be written to the application log.
+            </summary>
+        </member>
+        <member name="P:Axle.Logging.ILogEntry.Timestamp">
+            <summary>
+            The exact date and time of the occurrence of the application event.
+            </summary>
+        </member>
+        <member name="P:Axle.Logging.ILogEntry.ThreadID">
+            <summary>
+            The name of the thread where the application event occurred.
+            </summary>
+        </member>
+        <member name="P:Axle.Logging.ILogEntry.Severity">
+            <summary>
+            The <see cref="T:Axle.Logging.LogSeverity">severity</see> of the application event.
+            </summary>
+        </member>
+        <member name="P:Axle.Logging.ILogEntry.Type">
+            <summary>
+            The <see cref="P:Axle.Logging.ILogEntry.Type">type</see> of the object that triggered the event.
+            </summary>
+        </member>
+        <member name="P:Axle.Logging.ILogEntry.Message">
+            <summary>
+            A custom message describing the log event. In case of an <see cref="T:System.Exception">exception</see>, this could represent 
+            the actual <see cref="P:System.Exception.Message">exception message</see>.
+            </summary>
+        </member>
+        <member name="P:Axle.Logging.ILogEntry.Exception">
+            <summary>
+            Holds a reference to the <see cref="T:System.Exception">exception</see> instance that may be the cause of the event,
+            or <c>null</c> in case of non-exceptional application event.
+            </summary>
+        </member>
+        <member name="T:Axle.Logging.ILoggingServiceProvider">
+            <summary>
+            An interface for creating <see cref="T:Axle.Logging.ILogger">logger</see> implementations.
+            </summary>
+        </member>
+        <member name="M:Axle.Logging.ILoggingServiceProvider.Create(System.Type)">
+            <summary>
+            Creates an <see cref="T:Axle.Logging.ILogger"/> instance attached to the specified <paramref name="targetType"/>.
+            </summary>
+            <param name="targetType">The type the <see cref="T:Axle.Logging.ILogger">logger</see> should be attached to.</param>
+            <returns>
+            An <see cref="T:Axle.Logging.ILogger"/> instance attached to the specified <paramref name="targetType"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="targetType"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:Axle.Logging.ILoggingServiceProvider.Create``1">
+            <summary>
+            Creates an <see cref="T:Axle.Logging.ILogger"/> instance attached to the specified type <typeparamref name="T"/>.
+            </summary>
+            <returns>
+            An <see cref="T:Axle.Logging.ILogger"/> instance attached to the specified type <typeparamref name="T"/>.
+            </returns>
+            <typeparam name="T">The type the <see cref="T:Axle.Logging.ILogger">logger</see> should be attached to.</typeparam>
+        </member>
+        <member name="M:Axle.Logging.ILoggingServiceProvider.CreateLogger(System.Type)">
+            <summary>
+            Creates an <see cref="T:Axle.Logging.ILogger"/> instance attached to the specified <paramref name="targetType"/>.
+            </summary>
+            <param name="targetType">The type the <see cref="T:Axle.Logging.ILogger">logger</see> should be attached to.</param>
+            <returns>
+            An <see cref="T:Axle.Logging.ILogger"/> instance attached to the specified <paramref name="targetType"/>.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            <paramref name="targetType"/> is <c>null</c>.
+            </exception>
+        </member>
+        <member name="M:Axle.Logging.ILoggingServiceProvider.CreateLogger``1">
+            <summary>
+            Creates an <see cref="T:Axle.Logging.ILogger"/> instance attached to the specified type <typeparamref name="T"/>.
+            </summary>
+            <returns>
+            An <see cref="T:Axle.Logging.ILogger"/> instance attached to the specified type <typeparamref name="T"/>.
+            </returns>
+            <typeparam name="T">The type the <see cref="T:Axle.Logging.ILogger">logger</see> should be attached to.</typeparam>
+        </member>
+        <member name="T:Axle.Logging.LogEntry">
+            <summary>
+            The default <see cref="T:Axle.Logging.ILogEntry"/> implementation provided by the Axle Framework.
+            </summary>
+        </member>
+        <member name="T:Axle.Logging.LoggerExtensions">
+            <summary>
+            A static class to act as a mixin to the <see cref="T:Axle.Logging.ILogger"/> interface. 
+            Provides convenient overloads for logging methods based on the default behavior defined by the <see cref="T:Axle.Logging.ILogger"/> interface.
+            </summary>
+        </member>
+        <member name="M:Axle.Logging.LoggerExtensions.Debug(Axle.Logging.ILogger,System.Exception)">
+            <summary>
+            Writes the provided <paramref name="exception"/> exception as a <see cref="F:Axle.Logging.LogSeverity.Debug">debug</see> message.
+            </summary>
+            <param name="logger">The <see cref="T:Axle.Logging.ILogger">logger</see> instance used to log the message.</param>
+            <param name="exception">The <see cref="T:System.Exception"/> to be written to the log.</param>
+            <returns>
+            A reference to the <see cref="T:Axle.Logging.ILogger">logger</see> instance that wrote the message.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="logger" /> or <paramref name="exception"/> is <c>null</c>.
+            </exception>
+            <seealso cref="T:Axle.Logging.ILogger"/>
+            <seealso cref="T:Axle.Logging.LogSeverity"/>
+            <seealso cref="F:Axle.Logging.LogSeverity.Debug"/>
+            <seealso cref="T:System.Exception"/>
+        </member>
+        <member name="M:Axle.Logging.LoggerExtensions.Trace(Axle.Logging.ILogger,System.Exception)">
+            <summary>
+            Writes the provided <paramref name="exception"/> exception as a <see cref="F:Axle.Logging.LogSeverity.Trace">trace</see> message.
+            </summary>
+            <param name="logger">The <see cref="T:Axle.Logging.ILogger">logger</see> instance used to log the message.</param>
+            <param name="exception">The <see cref="T:System.Exception"/> to be written to the log.</param>
+            <returns>
+            A reference to the <see cref="T:Axle.Logging.ILogger">logger</see> instance that wrote the message.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="logger" /> or <paramref name="exception"/> is <c>null</c>.
+            </exception>
+            <seealso cref="T:Axle.Logging.ILogger"/>
+            <seealso cref="T:Axle.Logging.LogSeverity"/>
+            <seealso cref="F:Axle.Logging.LogSeverity.Trace"/>
+            <seealso cref="T:System.Exception"/>
+        </member>
+        <member name="M:Axle.Logging.LoggerExtensions.Warn(Axle.Logging.ILogger,System.Exception)">
+            <summary>
+            Writes the provided <paramref name="exception"/> exception as a <see cref="F:Axle.Logging.LogSeverity.Warning">warning</see> message.
+            </summary>
+            <param name="logger">The <see cref="T:Axle.Logging.ILogger">logger</see> instance used to log the message.</param>
+            <param name="exception">The <see cref="T:System.Exception"/> to be written to the log.</param>
+            <returns>
+            A reference to the <see cref="T:Axle.Logging.ILogger">logger</see> instance that wrote the message.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="logger" /> or <paramref name="exception"/> is <c>null</c>.
+            </exception>
+            <seealso cref="T:Axle.Logging.ILogger"/>
+            <seealso cref="T:Axle.Logging.LogSeverity"/>
+            <seealso cref="F:Axle.Logging.LogSeverity.Warning"/>
+            <seealso cref="T:System.Exception"/>
+        </member>
+        <member name="M:Axle.Logging.LoggerExtensions.Error(Axle.Logging.ILogger,System.Exception)">
+            <summary>
+            Writes the provided <paramref name="exception"/> exception as a <see cref="F:Axle.Logging.LogSeverity.Error">error</see> message.
+            </summary>
+            <param name="logger">The <see cref="T:Axle.Logging.ILogger">logger</see> instance used to log the message.</param>
+            <param name="exception">The <see cref="T:System.Exception"/> to be written to the log.</param>
+            <returns>
+            A reference to the <see cref="T:Axle.Logging.ILogger">logger</see> instance that wrote the message.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="logger" /> or <paramref name="exception"/> is <c>null</c>.
+            </exception>
+            <seealso cref="T:Axle.Logging.ILogger"/>
+            <seealso cref="T:Axle.Logging.LogSeverity"/>
+            <seealso cref="F:Axle.Logging.LogSeverity.Error"/>
+            <seealso cref="T:System.Exception"/>
+        </member>
+        <member name="M:Axle.Logging.LoggerExtensions.Fail(Axle.Logging.ILogger,System.Exception)">
+            <summary>
+            Writes the provided <paramref name="exception"/> exception as a <see cref="F:Axle.Logging.LogSeverity.Failure">failure</see> message.
+            </summary>
+            <param name="logger">The <see cref="T:Axle.Logging.ILogger">logger</see> instance used to log the message.</param>
+            <param name="exception">The <see cref="T:System.Exception"/> to be written to the log.</param>
+            <returns>
+            A reference to the <see cref="T:Axle.Logging.ILogger">logger</see> instance that wrote the message.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Either <paramref name="logger" /> or <paramref name="exception"/> is <c>null</c>.
+            </exception>
+            <seealso cref="T:Axle.Logging.ILogger"/>
+            <seealso cref="T:Axle.Logging.LogSeverity"/>
+            <seealso cref="F:Axle.Logging.LogSeverity.Failure"/>
+            <seealso cref="T:System.Exception"/>
+        </member>
+        <member name="T:Axle.Logging.LogSeverity">
+            <summary>
+            An enumeration that represents the importance (severity) of an application log's entries.
+            </summary>
+        </member>
+        <member name="F:Axle.Logging.LogSeverity.Debug">
+            <summary>
+            The entry is logged for debugging purposes.
+            </summary>
+        </member>
+        <member name="F:Axle.Logging.LogSeverity.Info">
+            <summary>
+            The entry is logged for informative purposes. Usually used to indicate that certain application event occurred, without signifying its importance.
+            </summary>
+        </member>
+        <member name="F:Axle.Logging.LogSeverity.Trace">
+            <summary>
+            Same as <see cref="F:Axle.Logging.LogSeverity.Info">Info</see>
+            </summary>
+            <seealso cref="F:Axle.Logging.LogSeverity.Info">Info</seealso>
+        </member>
+        <member name="F:Axle.Logging.LogSeverity.Warning">
+            <summary>
+            The entry represents a warning. Usually, a warning is an error event that normally should not occur, but the application has a way to work it 
+            around and continue to operate.
+            </summary>
+        </member>
+        <member name="F:Axle.Logging.LogSeverity.Error">
+            <summary>
+            The entry represents an error.
+            </summary>
+        </member>
+        <member name="F:Axle.Logging.LogSeverity.Failure">
+            <summary>
+            The entry represents a fatal condition that causes the application to terminate unexpectedly.
+            </summary>
+        </member>
+        <member name="F:Axle.Logging.LogSeverity.Fatal">
+            <summary>
+            Same as <see cref="F:Axle.Logging.LogSeverity.Failure">Failure</see>
+            </summary>
+            <seealso cref="F:Axle.Logging.LogSeverity.Failure">Failure</seealso>
+        </member>
+        <member name="M:Axle.Modularity.ModularContext.RankModules(System.Collections.Generic.IEnumerable{Axle.Modularity.ModuleInfo},System.Collections.Generic.ICollection{System.Type},System.Collections.Generic.IList{System.String})">
+            <summary>
+            Creates a list of modules, grouped by and sorted by a rank integer. The rank determines
+            the order for bootstrapping the modules -- those with lower rank will be bootstrapped earlier. 
+            A module with particular rank does not have module dependencies with a higher rank. 
+            Modules of the same rank can be bootstrapped simultaneously in multiple threads, if parallel option is specified.
+            </summary>
+            <param name="moduleCatalog">
+            An collection of modules to be ranked.
+            </param>
+            <param name="loadedModules">
+            A list of already loaded modules, which will aid in ranking a subsequent set of modules to be loaded at runtime.
+            </param>
+            <returns>
+            A collection of module groups, sorted by rank. 
+            </returns>
+        </member>
+        <member name="P:Axle.Modularity.ModuleConfigSectionAttribute.Type">
+            <summary>
+            Gets the type of the configuration section object that addresses the target module.
+            </summary>
+        </member>
+        <member name="P:Axle.Modularity.ModuleConfigSectionAttribute.Name">
+            <summary>
+            Gets the name of the configuration section representing the target module's configuration.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,19 @@
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\x86\Debug\Security System.exe.config
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\x86\Debug\Security System.exe
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\x86\Debug\Security System.pdb
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\x86\Debug\Security System.xml
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security System.vbprojResolveAssemblyReference.cache
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security_System.Count_Down.resources
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security_System.Dashboard.resources
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security_System.Registration.resources
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security_System.Login.resources
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security_System.Resources.resources
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security_System.Ticket_Entry.resources
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security System.vbproj.GenerateResource.Cache
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security System.exe
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security System.xml
+C:\Users\EMEM-OBONG\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\x86\Debug\Security System.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\x86\Debug\Microsoft.VisualStudio.Interop.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\x86\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\x86\Debug\Microsoft.VisualStudio.Interop.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\x86\Debug\Microsoft.VisualStudio.OLE.Interop.xml

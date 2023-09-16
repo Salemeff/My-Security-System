@@ -1,0 +1,266 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Axle.Text.Data</name>
+    </assembly>
+    <members>
+        <member name="M:Axle.Text.Data.Binding.BindingConverter.TryConvertMemberValue(System.String,System.Type,System.Object@)">
+            <inheritdoc />
+        </member>
+        <member name="T:Axle.Text.Data.Binding.BoundSimpleValueProvider">
+            <summary>
+            The default implementation of the <see cref="T:Axle.Text.Data.Binding.IBoundSimpleValueProvider"/> interface.
+            </summary>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.BoundSimpleValueProvider.#ctor(System.String,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:Axle.Text.Data.Binding.BoundSimpleValueProvider"/> class.
+            </summary>
+            <param name="name">The name of the represented member.</param>
+            <param name="value">The raw value of the represented member.</param>
+        </member>
+        <member name="P:Axle.Text.Data.Binding.BoundSimpleValueProvider.Name">
+            <inheritdoc />
+        </member>
+        <member name="P:Axle.Text.Data.Binding.BoundSimpleValueProvider.Value">
+            <inheritdoc />
+        </member>
+        <member name="T:Axle.Text.Data.Binding.DefaultBinder">
+            <summary>
+            A general-purpose implementation of the <see cref="T:Axle.Text.Data.Binding.IBinder"/> interface.
+            </summary>
+            <seealso cref="T:Axle.Text.Data.Binding.IBinder"/>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.DefaultBinder.#ctor(Axle.Text.Data.Binding.IObjectProvider,Axle.Text.Data.Binding.IBindingConverter)">
+            <summary>
+            Creates a new instance of the <see cref="T:Axle.Text.Data.Binding.DefaultBinder"/> class using the specified 
+            <paramref name="objectProvider"/> and <paramref name="converter"/>.
+            </summary>
+            <param name="objectProvider">
+            A <see cref="T:Axle.Text.Data.Binding.IObjectProvider"/> instance that enables creation and member access 
+            to the object instance being bound.
+            </param>
+            <param name="converter">
+            A <see cref="T:Axle.Text.Data.Binding.IBindingConverter"/> instance that handles the conversion of the raw data values
+            during the binding process.
+            </param>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.DefaultBinder.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Axle.Text.Data.Binding.DefaultBinder"/> class using a 
+            <see cref="T:Axle.Text.Data.Binding.ReflectionObjectProvider"/> and a <see cref="T:Axle.Text.Data.Binding.DefaultBindingConverter"/>
+            </summary>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.DefaultBinder.Bind(Axle.Text.Data.Binding.IBoundValueProvider,System.Object)">
+            <inheritdoc />
+        </member>
+        <member name="M:Axle.Text.Data.Binding.DefaultBinder.Bind(Axle.Text.Data.Binding.IBoundValueProvider,System.Type)">
+            <inheritdoc />
+        </member>
+        <member name="P:Axle.Text.Data.Binding.DefaultBinder.ObjectProvider">
+            <summary>
+            Gets the current <see cref="T:Axle.Text.Data.Binding.IObjectProvider"/> instance that enables creation and member access 
+            to the object instance being bound.
+            </summary>
+        </member>
+        <member name="P:Axle.Text.Data.Binding.DefaultBinder.Converter">
+            <summary>
+            Gets the current <see cref="T:Axle.Text.Data.Binding.IBindingConverter"/> instance that handles the conversion of the raw data 
+            values during the binding process.
+            </summary>
+        </member>
+        <member name="T:Axle.Text.Data.Binding.DefaultBindingConverter">
+            <summary>
+            A <see cref="T:Axle.Text.Data.Binding.IBindingConverter"/> implementation supporting the conversion of a handful of primitive types. 
+            </summary>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.DefaultBindingConverter.TryConvertMemberValue(System.String,System.Type,System.Object@)">
+            <inheritdoc/>
+        </member>
+        <member name="T:Axle.Text.Data.Binding.IBinder">
+            <summary>
+            An interface representing a binder; that is an object which is used to bind a structured data format to
+            an object instance.
+            </summary>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.IBinder.Bind(Axle.Text.Data.Binding.IBoundValueProvider,System.Object)">
+            <summary>
+            Binds the provided <paramref name="instance"/> object with the data available in the given 
+            <paramref name="memberValueProvider"/>.
+            </summary>
+            <param name="memberValueProvider">
+            The <see cref="T:Axle.Text.Data.Binding.IBoundValueProvider"/> instance that is supplying values for the binding process.
+            </param>
+            <param name="instance">
+            An <see cref="T:System.Object"/> instance that will be updated with the provided by the 
+            <paramref name="memberValueProvider"/> values.
+            </param>
+            <returns>
+            A reference to the data-bound object.
+            </returns>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.IBinder.Bind(Axle.Text.Data.Binding.IBoundValueProvider,System.Type)">
+            <summary>
+            Binds an object instance of the provided <paramref name="type"/> with the data available in the given 
+            <paramref name="memberValueProvider"/>.
+            </summary>
+            <param name="memberValueProvider">
+            The <see cref="T:Axle.Text.Data.Binding.IBoundValueProvider"/> instance that is supplying values for the binding process.
+            </param>
+            <param name="type">
+            The <see cref="T:System.Type"/> of the object instance that will be updated with the provided by the 
+            <paramref name="memberValueProvider"/> values.
+            </param>
+            <returns>
+            A reference to the data-bound object.
+            </returns>
+        </member>
+        <member name="T:Axle.Text.Data.Binding.IBindingConverter">
+            <summary>
+            A binding converter is an object which is used by a <see cref="T:Axle.Text.Data.Binding.IBinder"/>
+            to convert a raw <see cref="T:System.String"/> value to an instance of a specified type.
+            </summary>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.IBindingConverter.TryConvertMemberValue(System.String,System.Type,System.Object@)">
+            <summary>
+            Attempts to convert a given <paramref name="rawValue"/> string parameter to
+            the specified <paramref name="type"/>.
+            </summary>
+            <param name="rawValue">
+            The <see cref="T:System.String"/> value that will be converted.
+            </param>
+            <param name="type">
+            The target type of the conversion.
+            </param>
+            <param name="boundValue">
+            An output parameter representing the converted value.
+            This parameter is passed uninitialized.
+            </param>
+            <returns>
+            <c><see langword="true"/></c> if the conversion was successful and the <paramref name="boundValue"/> was set;
+            <c><see langword="false"/></c> otherwise.
+            </returns>
+        </member>
+        <member name="T:Axle.Text.Data.Binding.IBoundComplexValueProvider">
+            <summary>
+            An interface representing an binder object provider; that is a type of <see cref="T:Axle.Text.Data.Binding.IBoundValueProvider"/> 
+            that is used to supply values for complex types.
+            </summary>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.IBoundComplexValueProvider.TryGetValue(System.String,Axle.Text.Data.Binding.IBoundValueProvider@)">
+            <summary>
+            Attempts to get the value(s) associated for the given <paramref name="member"/>.
+            </summary>
+            <param name="member">
+            The member to lookup values for.
+            </param>
+            <param name="value">
+            An <see cref="T:Axle.Text.Data.Binding.IBoundValueProvider"/> instance representing the value associated with the given 
+            <paramref name="member"/>. 
+            This parameter is passed uninitialized.
+            </param>
+            <returns>
+            <c>true</c>, if there are values for the given <paramref name="member"/>; <c>false</c> otherwise.
+            </returns>
+        </member>
+        <member name="P:Axle.Text.Data.Binding.IBoundComplexValueProvider.Item(System.String)">
+            <summary>
+            Gets the value(s) associated for the given <paramref name="member"/>.
+            </summary>
+            <param name="member">
+            The member to lookup values for.
+            </param>
+            <returns>
+            An <see cref="T:Axle.Text.Data.Binding.IBoundValueProvider"/> instance representing the values associated with the given 
+            <paramref name="member"/>, or <c><see langword="null"/></c> if no values exist for the given member.
+            </returns>
+        </member>
+        <member name="T:Axle.Text.Data.Binding.IBoundSimpleValueProvider">
+            <summary>
+            An interface representing a <see cref="T:Axle.Text.Data.Binding.IBoundSimpleValueProvider" />, that is a binder value provider used to 
+            supply data for simple data types.
+            </summary>
+        </member>
+        <member name="P:Axle.Text.Data.Binding.IBoundSimpleValueProvider.Value">
+            <summary>
+            A string representation of the value represented by the current <see cref="T:Axle.Text.Data.Binding.IBoundSimpleValueProvider"/>   
+            implementation.
+            </summary>
+        </member>
+        <member name="T:Axle.Text.Data.Binding.IBoundValueProvider">
+            <summary>
+            An interface representing a member value provider; that is an object which provides values for 
+            object members to a <see cref="T:Axle.Text.Data.Binding.IBinder"/> during the binding process.
+            </summary>
+            <seealso cref="T:Axle.Text.Data.Binding.IBinder"/>
+        </member>
+        <member name="P:Axle.Text.Data.Binding.IBoundValueProvider.Name">
+            <summary>
+            The name of the member this <see cref="T:Axle.Text.Data.Binding.IBoundValueProvider"/> is providing values for.
+            </summary>
+            <remarks>
+            An <see cref="F:System.String.Empty">empty string</see> (<c>""</c>) value is allowed when the current 
+            <see cref="T:Axle.Text.Data.Binding.IBoundValueProvider"/> addresses the root object being bound.
+            </remarks>
+        </member>
+        <member name="T:Axle.Text.Data.Binding.IObjectProvider">
+            <summary>
+            An interface representing an object information provider. An object information provider is 
+            used by a <see cref="T:Axle.Text.Data.Binding.IBinder"/> to obtain means for creating instances of a particular object
+            or to access an object instance's members.
+            </summary>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.IObjectProvider.GetMember(System.Object,System.String)">
+            <summary>
+            Finds an object <paramref name="instance"/>'s member with the specified <paramref name="name"/>.
+            </summary>
+            <param name="instance">
+            The object instance to find the member on.
+            </param>
+            <param name="name">
+            The name of the member to be found on the object instance.
+            </param>
+            <returns>
+            A <see cref="T:Axle.Reflection.IReadWriteMember"/> representing the <paramref name="instance"/>'s member with the 
+            provided <paramref name="name"/>, or <c><see langword="null"/></c> if no such member was found.
+            </returns>
+            
+        </member>
+        <member name="M:Axle.Text.Data.Binding.IObjectProvider.GetMembers(System.Object)">
+            <summary>
+            Lists all members of an object <paramref name="instance"/>.
+            </summary>
+            <param name="instance">
+            The object instance to find the member on.
+            </param>
+            <returns>
+            An array of <see cref="T:Axle.Reflection.IReadWriteMember"/> representing all members of the provided object <paramref name="instance"/>.
+            </returns>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.IObjectProvider.CreateInstance(System.Type)">
+            <summary>
+            Attempts to create an instance of the provided <paramref name="type"/>.
+            </summary>
+            <param name="type">
+            The type to create an instance of.
+            </param>
+            <returns>
+            The newly created object instance, or <c><see langword="null"/></c> if instantiation did not succeed.
+            </returns>
+        </member>
+        <member name="T:Axle.Text.Data.Binding.ReflectionObjectProvider">
+            <summary>
+            An implementation of the <see cref="T:Axle.Text.Data.Binding.IObjectProvider"/> that uses reflection.
+            </summary>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.ReflectionObjectProvider.GetMember(System.Object,System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.ReflectionObjectProvider.GetMembers(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:Axle.Text.Data.Binding.ReflectionObjectProvider.CreateInstance(System.Type)">
+            <inheritdoc/>
+        </member>
+    </members>
+</doc>

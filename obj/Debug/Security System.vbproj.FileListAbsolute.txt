@@ -1,0 +1,96 @@
+c:\users\emem-obong\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Security System.exe.config
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Security System.exe
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Security System.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Security System.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security System.vbprojResolveAssemblyReference.cache
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Resources.resources
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security System.vbproj.GenerateResource.Cache
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security System.exe
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security System.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security System.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Dashboard.resources
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Login.resources
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Ticket_Entry.resources
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Count_Down.resources
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Registration.resources
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Application.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Configuration.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Core.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.OleDb.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Text.Data.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\DatabaseConnections.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\DatabaseConnections.OleDb.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Databasic.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Microsoft.VisualStudio.Interop.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\SFERA.Database.Wrapper.Microsoft.OleDB.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\SFERA.Helpers.BaseClass.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\SFERA.Helpers.VisualBasic.dll
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Application.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Application.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Configuration.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Configuration.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Core.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Core.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.OleDb.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.OleDb.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Text.Data.pdb
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Text.Data.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Databasic.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Microsoft.VisualStudio.Interop.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\bin\Debug\SFERA.Database.Wrapper.Microsoft.OleDB.xml
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.LoginUser.resources
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.DataForm.resources
+C:\Users\EMEM-OBONG\documents\visual studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Form1.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Security System.exe.config
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Security System.exe
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Security System.pdb
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Security System.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Application.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Configuration.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Core.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.OleDb.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Text.Data.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\DatabaseConnections.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\DatabaseConnections.OleDb.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Databasic.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Microsoft.VisualStudio.Interop.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\SFERA.Database.Wrapper.Microsoft.OleDB.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\SFERA.Helpers.BaseClass.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\SFERA.Helpers.VisualBasic.dll
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Application.pdb
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Application.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Configuration.pdb
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Configuration.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Core.pdb
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Core.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.pdb
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.OleDb.pdb
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Data.OleDb.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Text.Data.pdb
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Axle.Text.Data.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Databasic.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Microsoft.VisualStudio.Interop.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\bin\Debug\SFERA.Database.Wrapper.Microsoft.OleDB.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security System.vbprojResolveAssemblyReference.cache
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Count_Down.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Dashboard.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.DataForm.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Form1.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.LoginUser.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Registration.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Login.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Resources.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security_System.Ticket_Entry.resources
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security System.vbproj.GenerateResource.Cache
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security System.exe
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security System.xml
+C:\Users\EMEM\Documents\Visual Studio 2015\Projects\Security System\Security System\obj\Debug\Security System.pdb

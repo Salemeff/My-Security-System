@@ -1,0 +1,988 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SFERA.Database.Wrapper.Microsoft.OleDB
+</name>
+</assembly>
+<members>
+<member name="T:SFERA.Database.Wrapper.Microsoft.OleDB.MegaTransaction">
+ <summary>
+ Used for execute parallel slots against several wrappers under same transaction
+ </summary>
+ <remarks>Useful for distributed transaction across several databases</remarks>
+</member>
+<member name="P:SFERA.Database.Wrapper.Microsoft.OleDB.MegaTransaction.Entity.Slots">
+ <summary>
+ Statements to be executed for current wrapper
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.MegaTransaction.Execute">
+ <summary>
+ Executes all entities in sequences in event of success, either rollback everythink
+ </summary>
+ <remarks>Use internal transaction between all entities' sql statements. There is commit/rollback at the end</remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.MegaTransaction.Execute(SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder.WrapperTransaction,System.Collections.Generic.List{System.String})">
+ <summary>
+ Executes sql statements using Connection/Transaction passed from outside
+ </summary>
+ <param name="transaction">Transaction must be prepared before being passed here</param>
+ <remarks>There is no commit/rollback at the end</remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.MegaTransaction.Execute(SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder.WrapperTransaction,System.String)">
+ <summary>
+ Executes sql statement using Connection/Transaction passed from outside
+ </summary>
+ <param name="transaction">Transaction must be prepared before being passed here</param>
+ <remarks>There is no commit/rollback at the end</remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder.BeginTransaction">
+ <summary>
+ Initializes an new transaction
+ </summary>
+ <returns>System.Data.OleDb.OleDbTransaction</returns>
+ <remarks></remarks>
+</member>
+<member name="P:SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder.Connection">
+ <summary>
+ An System.Data.OleDb.OleDbConnection 
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Structures.Parameters.Add(System.Object,System.Data.SqlDbType,System.String,System.Data.ParameterDirection)">
+ <summary>
+ Add a parameters to the array Parameters (see properties of this class)
+ </summary>
+ <param name="ParameterName">Sets the name of the System.Data.SqlClient.SqlParameter. In event of empty it's Now.ticks</param>
+ <param name="Value">Sets the value of the parameter.</param>
+ <param name="Direction">Sets a value that indicates whether the parameter is input-only, output-only,
+ <param name="SqlDbType">Sets the System.Data.SqlDbType of the parameter.</param>
+ bidirectional, or a stored procedure return value parameter.</param>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Structures.Parameters.Add(System.Object,System.String,System.Data.ParameterDirection)">
+ <summary>
+ Add a parameters to the array Parameters (see properties of this class)
+ </summary>
+ <param name="ParameterName">Sets the name of the System.Data.SqlClient.SqlParameter. In event of empty it's Now.ticks</param>
+ <param name="Value">Sets the value of the parameter.</param>
+ <param name="Direction">Sets a value that indicates whether the parameter is input-only, output-only,
+ bidirectional, or a stored procedure return value parameter.</param>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Structures.Parameters.Add(System.Object,System.Data.DbType,System.String,System.Data.ParameterDirection)">
+ <summary>
+ Add a parameters to the array Parameters (see properties of this class)
+ </summary>
+ <param name="ParameterName">Sets the name of the System.Data.SqlClient.SqlParameter. In event of empty it's Now.ticks</param>
+ <param name="Value">Sets the value of the parameter.</param>
+ <param name="Direction">Sets a value that indicates whether the parameter is input-only, output-only,
+ <param name="DbType">Sets the System.Data.DbType of the parameter.</param>
+ bidirectional, or a stored procedure return value parameter.</param>
+</member>
+<member name="T:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper">
+ <summary>Hides all database connectivities stuff by exposing very simple methods</summary>
+</member>
+<member name="F:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.localForceConnection">
+ <summary>
+ Rappresenta la connection forzata dall'esterno tramite costruttore
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.ConnectionString">
+ <summary>Connection string used for contacting database</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.#ctor(System.Data.OleDb.OleDbConnection)">
+ <summary>
+ Force the connection from outside of this wrapper
+ </summary>
+ <param name="Connection"></param>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Exists(System.String)">
+ <summary>Returns True/False depending if sql statement contains data back from database (count = 0)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Exists(System.Text.StringBuilder)">
+ <summary>Returns True/False depending if sql statement contains data back from database (count = 0)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Exists(System.String,System.Data.OleDb.OleDbParameter)">
+ <summary>Returns True/False depending if sql statement contains data back from database (count = 0)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Exists(System.String,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns True/False depending if sql statement contains data back from database (count = 0)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Exists(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder)">
+ <summary>Returns True/False depending if sql statement contains data back from database (count = 0)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Exists(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Data.OleDb.OleDbParameter)">
+ <summary>Returns True/False depending if sql statement contains data back from database (count = 0)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Exists(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns True/False depending if sql statement contains data back from database (count = 0)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Exists(System.Data.DataSet)">
+ <summary>Returns True/False depending if sql statement contains data back from database (count = 0)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_SingleData(System.Data.DataSet)">
+ <summary>Returns a Scalar whenever sql statement gets back only one row and only one column: faster than normal db access. Please do a CAST based on database field</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_SingleData(System.String)">
+ <summary>Returns a Scalar whenever sql statement gets back only one row and only one column: faster than normal db access. Please do a CAST based on database field</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_SingleData(System.Text.StringBuilder)">
+ <summary>Returns a Scalar whenever sql statement gets back only one row and only one column: faster than normal db access. Please do a CAST based on database field</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_SingleData(System.String,System.Data.OleDb.OleDbParameter)">
+ <summary>Returns a Scalar whenever sql statement gets back only one row and only one column: faster than normal db access. Please do a CAST based on database field</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_SingleData(System.String,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a Scalar whenever sql statement gets back only one row and only one column: faster than normal db access. Please do a CAST based on database field</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_SingleData(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder)">
+ <summary>Returns a Scalar whenever sql statement gets back only one row and only one column: faster than normal db access. Please do a CAST based on database field</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_SingleData(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Data.OleDb.OleDbParameter)">
+ <summary>Returns a Scalar whenever sql statement gets back only one row and only one column: faster than normal db access. Please do a CAST based on database field</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_SingleData(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a Scalar whenever sql statement gets back only one row and only one column: faster than normal db access. Please do a CAST based on database field</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_Rows(System.String)">
+ <summary>
+ Returns an array elements based on first field returned from sqlString
+ </summary>
+ <param name="sqlString"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_Rows(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder)">
+ <summary>
+ Returns an array elements based on first field returned from sqlString
+ </summary>
+ <param name="sqlString"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_RowsID(System.Data.DataSet)">
+ <summary>
+ Returns an array elements based on first field returned from dataset which must be an Long
+ </summary>
+ <param name="Dataset"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_RowsID(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder)">
+ <summary>
+ Returns an array elements based on first field returned from sqlString which must be an Long
+ </summary>
+ <param name="sqlString"></param>
+ <returns></returns>
+ <remarks>Designed for getting a list of a numeric primary keys</remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_RowsID(System.String,System.String@)">
+ <summary>
+ Returns an array elements based on first field returned from sqlString which must be an Long
+ </summary>
+ <param name="sqlString"></param>
+ <param name="IN"></param>
+ <returns></returns>
+ <remarks>Designed for getting a list of a numeric primary keys</remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_RowsID(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.String@)">
+ <summary>
+ Returns an array elements based on first field returned from sqlString which must be an Long
+ </summary>
+ <param name="sqlString"></param>
+ <param name="IN"></param>
+ <returns></returns>
+ <remarks>Designed for getting a list of a numeric primary keys</remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataTable(System.String)">
+ <summary>Returns a DataTable object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataTable(System.String,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a DataTable object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataTable(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder)">
+ <summary>Returns a DataTable object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataTable(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Data.OleDb.OleDbParameter)">
+ <summary>Returns a DataTable object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataTable(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a DataTable object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.get_DataTable_LOCAL(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a DataTable object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataRows(System.String)">
+ <summary>Returns a DataRows objects with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataRows(System.String,System.Data.OleDb.OleDbParameter)">
+ <summary>Returns a DataRows objects with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataRows(System.String,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a DataRows objects with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataRows(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder)">
+ <summary>Returns a DataRows objects with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataRows(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Data.OleDb.OleDbParameter)">
+ <summary>Returns a DataRows objects with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataRows(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a DataRows objects with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_Connection">
+ <summary>Returns an available connection to the database</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataSet(System.String)">
+ <summary>Returns a DataSet object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataSet(System.String,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a DataSet object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataSet(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder)">
+ <summary>Returns a DataSet object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataSet(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Data.OleDb.OleDbParameter)">
+ <summary>Returns a DataSet object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataSet(System.String,SFERA.Database.Wrapper.Microsoft.OleDB.Structures.MegaTransactionHolder,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a DataSet object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataRow(System.String)">
+ <summary>Returns a DataRow object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Get_DataRow(System.String,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Returns a DataRow object with data back from executed sql string</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.Collections.Generic.List{System.String}@)">
+ <summary>Execute a chain of sql statements and rollback all in event one of them fails. If all are successfully return true else return false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.Collections.Generic.List{System.String}@,System.Boolean)">
+ <summary>Execute a chain of sql statements and rollback all in event one of them fails. If all are successfully return true else return false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.String)">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.Text.StringBuilder)">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.String,System.Int32@)">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+ <param name="SqlString">SqlStatement to be executed</param>
+ <param name="Identity">Returns last SCOPE IDENTITY</param>
+ <remarks>To be used only with SqlServer or above</remarks>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.String,System.Data.OleDb.OleDbParameter,System.Int32@)">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.String,System.Data.OleDb.OleDbParameter)">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.String,System.Data.OleDb.OleDbParameter,System.Boolean)">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.String,System.Collections.Generic.List{System.Data.OleDb.OleDbParameter})">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.String,System.Boolean)">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+</member>
+<member name="M:SFERA.Database.Wrapper.Microsoft.OleDB.Wrapper.Execute(System.String,System.Boolean,System.Int32@)">
+ <summary>Execute a sql statement and returns if successfully or not (true/false)</summary>
+ <param name="SqlString">SqlStatement to be executed</param>
+ <param name="Identity">Returns last SCOPE IDENTITY</param>
+ <remarks>To be used only with SqlServer 2000 or above</remarks>
+</member>
+<member name="T:SFERA.Database.Helper.Formatter">
+ <summary>Utility for database values formatting</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Constants.Date">
+ <summary>
+ Returns the sql equivalent for the current date
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Constants.Day">
+ <summary>
+ Returns the sql equivalent for the day
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Constants.Second">
+ <summary>
+ Returns the sql equivalent for the second
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Constants.NullDate(System.Boolean,SFERA.Database.Helper.Objects.Enums.SqlSyntax)">
+ <summary>
+ Returns the minimun date supported by the database specified
+ </summary>
+ <param name="UseMinimumValue">if set to <c>true</c> ignore specific database and returns 1753/1/1 0:0:0:0.</param>
+ <param name="Database">The database.</param>
+ <returns>System.DateTime.</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Constants.nullDatePrivate(System.Boolean)">
+ <summary>
+ Returns the minimun date supported by the database specified
+ </summary>
+ <param name="useMinimumValue"></param>
+ <returns></returns>
+ <remarks>For SqlServer: if using a smallDateTime field, please pass tha parameter useMinimumValue = False</remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Constants.NullString">
+ <summary>
+ Returns an empty string
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Constants.NullValue">
+ <summary>
+ Returns the DBNull value
+ </summary>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.#ctor">
+ <summary>
+ Use SqlServer_Native by default
+ </summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Boolean)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Nullable{System.Boolean})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.DateTime)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Nullable{System.DateTime})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Byte)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Nullable{System.Byte})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Decimal)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Nullable{System.Decimal})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Double)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns></returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Nullable{System.Double})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Int64)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns></returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Nullable{System.Int64})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Int32)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Nullable{System.Int32})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.String)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Value(System.Guid)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString not a valid System.Guid, SqlServer will throw an exception</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.Boolean(System.Boolean)">
+ <summary>Returns the boolean database equivalent value</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.DateFromStringToDate(System.String,SFERA.Database.Helper.Objects.Enums.DateFormat)">
+ <summary>Converts value string as date</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.String(System.String)">
+ <summary>Returns a string ready for database sql statement</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Convert.String(System.String,System.Boolean)">
+ <summary>Returns a string ready for database sql statement</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.get_Value``1(``0)">
+ <summary>Returns the value of the field if existing, else returns nothing</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Is.DBNull(System.Object)">
+ <summary>Is it a database field value Null?</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Is.Date(System.Object)">
+ <summary>Is it a date?</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Is.Date(System.Nullable{System.DateTime})">
+ <summary>Is it a date also against different than Constants.NullDate?</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Boolean})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Boolean},System.Boolean)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.DateTime)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.DateTime,System.DateTime)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.DateTime})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.DateTime},System.DateTime)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Byte})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Byte},System.Byte)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.String)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.String,System.String)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Int32})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Int32},System.Int32)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Single})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Single},System.Single)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Int64})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Int64},System.Int64)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Double})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Double},System.Double)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Decimal})">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns 'null'</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Value(System.Nullable{System.Decimal},System.Decimal)">
+ <summary>
+ Returns ValueToConvertToString ready fot the database.
+ </summary>
+ <param name="ValueToConvertToString"></param>
+ <returns>In event of ValueToConvertToString is null, it returns [Default] database formatted</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Integer(System.Nullable{System.Int32})">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Integer(System.Nullable{System.Int32},System.Int32)">
+ <summary>
+ Check the value and converts into a default value
+ </summary>
+ <param name="value">Value to be check</param>
+ <param name="default">Value returned in event of value is null</param>
+ <returns>default in event of Null/Nothing/DBNull, the original value in rest of events</returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Single(System.Nullable{System.Single})">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Single(System.Nullable{System.Single},System.Single)">
+ <summary>
+ Check the value and converts into a default value
+ </summary>
+ <param name="value">Value to be check</param>
+ <param name="default">Value returned in event of value is null</param>
+ <returns>default in event of Null/Nothing/DBNull, the original value in rest of events</returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Long(System.Nullable{System.Int64})">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Double(System.Nullable{System.Double})">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Decimal(System.Nullable{System.Decimal})">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Decimal(System.Nullable{System.Decimal},System.Decimal)">
+ <summary>
+ Check the value and converts into a default value
+ </summary>
+ <param name="value">Value to be checked</param>
+ <param name="default">Value returned in event of value is null</param>
+ <returns>default in event of Null/Nothing/DBNull, the original value in rest of events</returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Byte(System.Nullable{System.Byte})">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Byte(System.Nullable{System.Byte},System.Byte)">
+ <summary>
+ Check the value and converts into a default value
+ </summary>
+ <param name="value">Value to be check</param>
+ <param name="default">Value returned in event of value is null</param>
+ <returns>default in event of Null/Nothing/DBNull, the original value in rest of events</returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.String(System.String)">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.String(System.String,System.String)">
+ <summary>
+ Check the value and converts into a default value
+ </summary>
+ <param name="value">Value to be check</param>
+ <param name="default">Value returned in event of value is null</param>
+ <returns>default in event of Null/Nothing/DBNull, the original value in rest of events</returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Boolean(System.Nullable{System.Boolean})">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Date(System.DateTime)">
+ <summary>
+ 
+ </summary>
+ <param name="Value"></param>
+ <returns>Returns the string null in events of the parametere in input Value is null</returns>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.lookType(System.Object)">
+ <summary>
+ Converte il valore in un sottoinsieme gestibile ed approssimativo :-(
+ </summary>
+ <param name="value"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Formatter.Nothing.Object(System.Object,SFERA.Database.Helper.Formatter.Nothing.Type,System.Object)">
+ <summary>
+ Returns a value ready for being used into a script
+ </summary>
+ <param name="value"></param>
+ <param name="Type"></param>
+ <param name="Default"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Contains.Text(System.String)">
+ <summary>Is string value containing any string? NB: it Trims spaces</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Contains.Text(System.Object)">
+ <summary>Is string value containing any string? NB: it Trims spaces</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Contains.Data(System.Object)">
+ <summary>Is database field not Null and contains Data?</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Contains.Data(System.Data.DataSet)">
+ <summary>If dataset contains at least one table within one row</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Contains.Date(System.Object)">
+ <summary>
+ Tries to decode if value is a valid datetime
+ </summary>
+ <param name="value"></param>
+ <returns></returns>
+ <remarks>Same of i.Date</remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Contains.Date(System.Nullable{System.DateTime})">
+ <summary>
+ Tries to decode if value is a valid datetime
+ </summary>
+ <param name="value"></param>
+ <returns></returns>
+ <remarks>Same of i.Date</remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Contains.Text(System.String,System.Boolean)">
+ <summary>Is string value containing any string?</summary>
+ <param name="TrimSpaces">Ignores left/right spaces as valid chars</param>
+</member>
+<member name="T:SFERA.Database.Helper.Converter">
+ <summary>
+ Utility for converting data
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Converter.Number(System.Object)">
+ <summary>Returns a number based on a string</summary>
+ <param name="numberValue"></param>
+ <returns></returns>
+ <remarks>Only if inout parameter is a string</remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Converter.BytesToString(System.Byte[])">
+ <summary>
+ Converts a byte chain into a string
+ </summary>
+ <param name="bytes"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Converter.StringToBytes(System.String)">
+ <summary>
+ Converts a string into bytes
+ </summary>
+ <param name="value"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Converter.MaskText(System.String)">
+ <summary>Returns a string long like value but converted based on *</summary>
+</member>
+<member name="M:SFERA.Database.Helper.Converter.MaskText(System.String,System.String)">
+ <summary>Returns a string long like value but converted based on MaskChar</summary>
+<param name="MaskChar"> char to be used when replacing value</param> 
+</member>
+<member name="M:SFERA.Database.Helper.Converter.JoinNumbers(System.Collections.Generic.List{System.Int32},System.String)">
+ <summary>
+ Converts an array of integers to a string joint by the 'separator'
+ </summary>
+ <param name="values"></param>
+ <param name="separator"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Converter.JoinNumbers(System.Collections.Generic.List{System.Single},System.String)">
+ <summary>
+ Converts an array of single to a string joint by the 'separator'
+ </summary>
+ <param name="values"></param>
+ <param name="separator"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Converter.JoinNumbers(System.Collections.Generic.List{System.Int64},System.String)">
+ <summary>
+ Converts an array of integers to a string joint by the 'separator'
+ </summary>
+ <param name="values"></param>
+ <param name="separator"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Utilities.IN(System.Collections.Generic.List{System.Int32})">
+ <summary>
+ Returns a sql string by concatenating the IDs
+ </summary>
+ <param name="IDs"></param>
+ <returns>In events ids is empty it will return the default value which is -1</returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Utilities.IN(System.Collections.Generic.List{System.Int32},System.Nullable{System.Int32})">
+ <summary>
+ Returns a sql string by concatenating the IDs
+ </summary>
+ <param name="IDs">List of id to concatenate</param>
+ <param name="DefaultValue">Returns this value in event of IDs.Count = 0</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Utilities.IN(System.Collections.Generic.List{System.Int64})">
+ <summary>
+ Returns a sql string by concatenating the IDs
+ </summary>
+ <param name="IDs"></param>
+ <returns>In events ids is empty it will return the default value which is -1</returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Utilities.IN(System.Collections.Generic.List{System.Int64},System.Nullable{System.Int64})">
+ <summary>
+ Returns a sql string by concatenating the IDs
+ </summary>
+ <param name="IDs">List of id to concatenate</param>
+ <param name="DefaultValue">Returns this value in event of IDs.Count = 0</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Utilities.IN(System.Collections.Generic.List{System.String})">
+ <summary>
+ Returns a sql string by concatenating the IDs
+ </summary>
+ <param name="IDs"></param>
+ <returns>In events ids is empty it will return the default value which is -1</returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Utilities.IN(System.Collections.Generic.List{System.String},System.String)">
+ <summary>
+ Returns a sql string by concatenating the IDs
+ </summary>
+ <param name="IDs">List of id to concatenate</param>
+ <param name="DefaultValue">Returns this value in event of IDs.Count = 0</param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="M:SFERA.Database.Helper.Utilities.Sanitize(System.String)">
+ <summary>
+ Trims, remove white spaces, remove special characters and compress sql statement
+ </summary>
+ <param name="SqlStatement"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="F:SFERA.Database.Helper.Objects.Constants.WrapperTable">
+ <summary>
+ The default table name
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:SFERA.Database.Helper.Objects.Constants.InconsistentID">
+ <summary>
+ Used as identity whenever is not possible to evaluate the last inserted row
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:SFERA.Database.Helper.Shortcuts">
+ <summary>
+ Exposes all Formatter functionalities under same database. This is equivalent to create an instance of all Formatter classes
+ </summary>
+ <remarks>Useful for saving time</remarks>
+</member>
+<member name="F:SFERA.Database.Helper.Shortcuts.Contains">
+ <summary>
+ Wraps the Contains functionality
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:SFERA.Database.Helper.Shortcuts.Convert">
+ <summary>
+ Wraps the Convert functionality
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:SFERA.Database.Helper.Shortcuts.Is">
+ <summary>
+ Wraps the IS functionality
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:SFERA.Database.Helper.Shortcuts.Converter">
+ <summary>
+ Wraps the Converter functionality
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:SFERA.Database.Helper.Shortcuts.Constants">
+ <summary>
+ Wraps the Constants
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="F:SFERA.Database.Helper.Shortcuts.Nothing">
+ <summary>
+ Wraps the Nothing
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="P:BaseClass.Wrapper.SqlStatementsExecuted">
+ <summary>
+ Returns all sql statements before being executed.
+ </summary>
+ <value></value>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+<member name="P:BaseClass.Wrapper.CommandTimeout">
+ <summary>
+ Gets or sets the wait time before terminating an attempt to execute a command and generating an error.
+ </summary>
+ <value></value>
+ <returns>The time (in seconds) to wait for the command to execute. The default is 30 seconds.</returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>
